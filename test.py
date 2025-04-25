@@ -237,7 +237,7 @@ def send_summary_email(to_email, user_name, html_content):
 
     # Generate temp PDF and attach
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_pdf:
-        generate_pdf_from_html(email_body, tmp_pdf.name)
+        generate_pdf_from_html(html_content, tmp_pdf.name)
         tmp_pdf.seek(0)
         pdf_data = tmp_pdf.read()
 
